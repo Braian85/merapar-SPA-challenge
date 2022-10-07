@@ -41,15 +41,22 @@ Promise.all([getComments(), getPosts(), getUsers()]).then(
         }" class="post__button">Comments</button>       
         <div class="comments__container" id="comments ${post.id}">
         ${post.comments.map(
-          (comment) => `<div class="comment__body">
-        <div>
-        <img class="user__image" src="https://i.pravatar.cc/100?img=${
-          comment.user_id
-        }" alt="${comment.user_id}" />
-        </div>
-        ${users.data.find((user) => user.id === comment.user_id).name}
-        ${comment.body}
-        </div>`
+          (comment) => `<div class="comment__item">
+                           <img class="comment__user__image" src="https://i.pravatar.cc/100?img=${
+                             comment.user_id
+                           }" alt="${comment.user_id}" />
+                           <div class="user__comment">
+                           ${
+                             users.data.find(
+                               (user) => user.id === comment.user_id
+                             ).name
+                           }
+                           </div>
+                           <div class="comment__body">
+                            ${comment.body}
+                           </div>
+                         </div>
+        `
         )}
         </div>
       </div>
