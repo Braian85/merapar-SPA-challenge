@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap");
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+.post__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post__header {
+  display: flex;
+  width: 40%;
+}
+.image__container {
+  width: 100px;
+}
+
+.post__username {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.post__date {
+  font-size: 0.8rem;
+  color: #999;
+  margin-left: 1rem;
+}
+
+.post__title {
+  font-size: 1.5rem;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  width: 40%;
+}
+
+.post__body {
+  width: 40%;
+  margin-top: 1rem;
+}
+
+.user__image {
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user__info {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

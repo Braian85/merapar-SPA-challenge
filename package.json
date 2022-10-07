@@ -1,0 +1,17 @@
+{
+  "name": "frontend-interview-project",
+  "version": "1.0.0",
+  "description": "Interview project for Merapar frontend candidates",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./src/index.js"
+  },
+  "keywords": [
+    "merapar",
+    "interview",
+    "frontend"
+  ],
+  "author": "Merapar",
+  "license": "ISC"
+}
