@@ -6,11 +6,14 @@ body {
 .post__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  border: 2px solid #eaeaea;
+  margin: 50px 500px;
+  padding: 20px;
+  border-radius: 15px;
 }
 .post__header {
-  display: flex;
-  width: 40%;
+  display: flex;  
 }
 .image__container {
   width: 100px;
@@ -32,18 +35,18 @@ body {
   font-size: 1.5rem;
   font-family: "Urbanist", sans-serif;
   font-weight: 600;
-  width: 40%;
+
 }
 
 .post__body {
-  width: 40%;
+
   margin-top: 1rem;
 }
 
 .user__image {
-  height: 70px;
+  height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
+  
 }
 
 .user__info {
@@ -51,4 +54,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.post__button {
+    margin-top: 1rem;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.comments__container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
 }
