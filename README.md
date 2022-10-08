@@ -23,11 +23,11 @@ All API mocks can be found in [this file.](./src/data/index.js)
 
 Write a *vanilla* (no frameworks/scaffolding) SPA solution which allows for navigation and rendering of
 
-- Comments by Post (authors name displayed with comment)
+- [X] Comments by Post (authors name displayed with comment)
   - e.g. Select post and list comments with Author names
-- Posts by Author (authors name displayed)
+- [ ] Posts by Author (authors name displayed)
   - e.g. List all posts by selected Author
-- Comments by Author
+- [ ] Comments by Author
   - e.g. List all comments by selected Author alongside the post title the comment belongs to
 
 ## What we are looking for

@@ -1,5 +1,15 @@
 import { getComments, getPosts, getUsers } from "./data/index.js";
 
+const nav = document.createElement("div");
+nav.classList.add("nav");
+nav.innerHTML = `
+  <button class="nav__button" data-nav="posts">Home</button>
+  <button class="nav__button" data-nav="posts">Posts</button>
+  <button class="nav__button" data-nav="comments">Comments</button>
+  <button class="nav__button" data-nav="users">Users</button>
+`;
+
+
 Promise.all([getComments(), getPosts(), getUsers()]).then(
   ([comments, posts, users]) => {
     // posts with users and comments
@@ -13,6 +23,7 @@ Promise.all([getComments(), getPosts(), getUsers()]).then(
     console.log(postsWithUsersAndComments);
 
     const app = document.getElementById("root");
+    app.append(nav);
     postsWithUsersAndComments.forEach((post) => {
       const div = document.createElement("div");
       div.innerHTML = `
@@ -45,7 +56,7 @@ Promise.all([getComments(), getPosts(), getUsers()]).then(
                            <img class="comment__user__image" src="https://i.pravatar.cc/100?img=${
                              comment.user_id
                            }" alt="${comment.user_id}" />
-                           <div class="user__comment">
+                           <div class="comment__username">
                            ${
                              users.data.find(
                                (user) => user.id === comment.user_id
@@ -63,11 +74,5 @@ Promise.all([getComments(), getPosts(), getUsers()]).then(
       `;
       app.appendChild(div);
     });
-    // document.getElementById(`btn ${post.id}`).addEventListener("click", (e) => {
-    //   console.log(e.target.id);
-    //   const comment = document.createElement("div");
-    //   comment.innerHTML = `Comment ...`;
-    //   console.log(comment);
-    // });
   }
 );
