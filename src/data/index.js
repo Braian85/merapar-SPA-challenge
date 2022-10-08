@@ -1,6 +1,6 @@
-import comments from "./comments.json" assert { type: "json" };
-import posts from "./posts.json" assert { type: "json" };
-import users from "./users.json" assert { type: "json" };
+import comments from "./comments.json";
+import posts from "./posts.json";
+import users from "./users.json";
 
 const generateDelayTime = () => Math.random() * 1500 + 100;
 
