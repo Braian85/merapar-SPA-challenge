@@ -10,14 +10,14 @@ const router = async (route) => {
     case "#/Home": {
       return content.appendChild(pages.home());
     }
-    case "#/commentsbypost": {
+    case "#/Commentsbypost": {
       console.log("commentsbypost");
       return content.appendChild(await pages.commentsByPost());
     }
-    case "#/postsbyauthor": {
+    case "#/Postsbyauthor": {
       return content.appendChild(await pages.postsByAuthor());
     }
-    case "#/commentsbyauthor": {
+    case "#/Commentsbyauthor": {
       return content.appendChild(await pages.commentsByAuthor());
     }
     default: {

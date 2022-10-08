@@ -1,13 +1,8 @@
 import view from "../view/commentsbypost.html";
+import { getComments, getPosts, getUsers } from "../data/index.js";
 
 export default () => {
-  const divElement = document.createElement("div");
-  divElement.innerHTML = view;
-
-  const btnClick = divElement.querySelector("#btnClick");
-  btnClick.addEventListener("click", () => {
-    alert("clicked");
-  });
-
-  return divElement;
+  const commentsByPost = document.createElement("div");
+  commentsByPost.innerHTML = view;
+  return commentsByPost;
 };
