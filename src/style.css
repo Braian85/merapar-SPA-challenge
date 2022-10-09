@@ -54,6 +54,10 @@ body {
   margin: 10px 0;
 }
 
+.post__container-hidden {
+  display: none;
+}
+
 .post__header {
   display: flex;
 }
@@ -95,9 +99,16 @@ body {
   justify-content: flex-start;
 }
 
-.comment__button {
+.user__posts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+}
+
+.comment__button, .post__button {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   border: none;
   background-color: #eaeaea;
   border-radius: 5px;
@@ -105,6 +116,7 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
+  width: 130px;
 }
 
 .comments__container {
@@ -161,9 +173,12 @@ body {
   }
 }
 
+
 .user__container {
   display: flex;
   flex-direction: column;
   align-items: left;
   margin-top: 1rem;
 }
+
+

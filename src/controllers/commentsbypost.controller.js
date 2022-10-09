@@ -72,8 +72,8 @@ export default () => {
           `comments ${e.target.id.split("btn ")[1]}`
         );
         // toggle display style
-
         if (window.getComputedStyle(commentsContainer).display === "none") {
+        // if (commentsContainer.style.display === "none") {
           commentsContainer.style.display = "flex";
         } else {
           commentsContainer.style.display = "none";
