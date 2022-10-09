@@ -148,6 +148,15 @@ body {
   text-align: left;
 }
 
+.comment__post__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.author {
+  margin-left: 0;
+}
+
 /* add media queries at 500 px */
 @media (max-width: 720px) {
   .post__container {
@@ -179,6 +188,7 @@ body {
   flex-direction: column;
   align-items: left;
   margin-top: 1rem;
+  width: 600px;
 }
 
 
