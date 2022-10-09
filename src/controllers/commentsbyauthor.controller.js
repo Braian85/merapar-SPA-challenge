@@ -9,7 +9,6 @@ export default () => {
 
   Promise.all([getComments(), getUsers(), getPosts()]).then(
     ([comments, users, posts]) => {
-      // users with comments
       spinner.style.display = "none";
       const usersWithComments = [];
       comments.data.forEach((comment) => {
@@ -62,7 +61,6 @@ export default () => {
         const commentsContainer = document.getElementById(
           `comments ${e.target.id.split(" ")[1]}`
         );
-        // toggle display style
         if (window.getComputedStyle(commentsContainer).display === "none") {
           commentsContainer.style.display = "flex";
         } else {

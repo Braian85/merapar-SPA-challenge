@@ -1,4 +1,4 @@
-import view from "../view/home.html";
+import view from "../view/commentsbypost.html";
 import { getComments, getPosts, getUsers } from "../data/index.js";
 
 export default () => {
@@ -69,14 +69,11 @@ export default () => {
         `;
         home.appendChild(div);
       });
-      // aca va la logica de capturar botones !!
       function handleCommentClick(e) {
         const commentsContainer = document.getElementById(
           `comments ${e.target.id.split("btn ")[1]}`
         );
-        // toggle display style
         if (window.getComputedStyle(commentsContainer).display === "none") {
-          // if (commentsContainer.style.display === "none") {
           commentsContainer.style.display = "flex";
         } else {
           commentsContainer.style.display = "none";

@@ -9,7 +9,6 @@ export default () => {
 
   Promise.all([getPosts(), getUsers()]).then(([posts, users]) => {
     spinner.style.display = "none";
-    // users with posts
     const usersWithPosts = [];
     posts.data.forEach((post) => {
       if (!usersWithPosts.includes(post.user_id)) {
@@ -50,7 +49,6 @@ export default () => {
     });
     function handlePostClick(e) {
       const postsContainer = document.getElementById(`posts ${e.target.id.split(" ")[1]}`);
-      // toggle display style
       if (window.getComputedStyle(postsContainer).display === "none") {
         postsContainer.style.display = "flex";
       } else {
