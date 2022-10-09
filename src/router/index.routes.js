@@ -6,7 +6,7 @@ const router = async (route) => {
 
   console.log(route);
 
-  switch (route) {
+  switch (route) {    
     case "#/Commentsbypost": {
       return content.appendChild(await pages.commentsByPost());
     }
