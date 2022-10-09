@@ -1,3 +1,6 @@
+## Instructions to run the project
+After cloning the project, run `npm install` and then `npx webpack`. This will create a production ready `dist` folder. 
+
 ## Introduction
 The aim of this task is to test your engineering and problem solving ability.
 
