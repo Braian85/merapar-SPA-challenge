@@ -3,10 +3,8 @@ import { pages } from "../controllers/index.js";
 const router = async (route) => {
   let content = document.getElementById("root");
   content.innerHTML = "";
-
-  console.log(route);
-
-  switch (route) {    
+  
+  switch (route) {
     case "#/Commentsbypost": {
       return content.appendChild(await pages.commentsByPost());
     }

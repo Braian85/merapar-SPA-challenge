@@ -4,8 +4,11 @@ import { getComments, getPosts, getUsers } from "../data/index.js";
 export default () => {
   const home = document.createElement("div");
   home.innerHTML = view;
+  const spinner = document.getElementsByClassName("lds-roller")[0];
+  spinner.style.display = "block";
   Promise.all([getComments(), getPosts(), getUsers()])
     .then(([comments, posts, users]) => {
+      spinner.style.display = "none";
       const postsWithUsersAndComments = posts.data.map((post) => ({
         ...post,
         user: users.data.find((user) => user.id === post.user_id),
@@ -73,7 +76,7 @@ export default () => {
         );
         // toggle display style
         if (window.getComputedStyle(commentsContainer).display === "none") {
-        // if (commentsContainer.style.display === "none") {
+          // if (commentsContainer.style.display === "none") {
           commentsContainer.style.display = "flex";
         } else {
           commentsContainer.style.display = "none";

@@ -4,20 +4,19 @@ import { getComments, getPosts, getUsers } from "../data/index.js";
 export default () => {
   const commentsByAuthor = document.createElement("div");
   commentsByAuthor.innerHTML = view;
+  const spinner = document.getElementsByClassName("lds-roller")[0]
+  spinner.style.display = "block";
 
   Promise.all([getComments(), getUsers(), getPosts()]).then(
     ([comments, users, posts]) => {
       // users with comments
+      spinner.style.display = "none";
       const usersWithComments = [];
       comments.data.forEach((comment) => {
         if (!usersWithComments.includes(comment.user_id)) {
           usersWithComments.push(comment.user_id);
         }
       });
-      console.log("userWithComments", usersWithComments);
-      console.log("users: ", users.data);
-      console.log("comments: ", comments);
-      console.log("posts: ", posts);
 
       usersWithComments.forEach((user) => {
         const username = users.data.find((u) => u.id === user).name;
@@ -60,7 +59,6 @@ export default () => {
         commentsByAuthor.appendChild(userDiv);
       });
       function handleCommentClick(e) {
-        console.log("event: ", e.target.id);
         const commentsContainer = document.getElementById(
           `comments ${e.target.id.split(" ")[1]}`
         );

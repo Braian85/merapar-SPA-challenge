@@ -4,8 +4,11 @@ import { getComments, getPosts, getUsers } from "../data/index.js";
 export default () => {
   const postsByAuthor = document.createElement("div");
   postsByAuthor.innerHTML = view;
+  const spinner = document.getElementsByClassName("lds-roller")[0]
+  spinner.style.display = "block";
 
   Promise.all([getPosts(), getUsers()]).then(([posts, users]) => {
+    spinner.style.display = "none";
     // users with posts
     const usersWithPosts = [];
     posts.data.forEach((post) => {
@@ -13,12 +16,8 @@ export default () => {
         usersWithPosts.push(post.user_id);
       }
     });
-    console.log("userWithPosts", usersWithPosts);
-    console.log("users: ", users.data);
-    console.log("posts: ", posts);
 
     usersWithPosts.forEach((user) => {
-      console.log("user:::", user);
       const username = users.data.find((u) => u.id === user).name;
       const userDiv = document.createElement("div");
       userDiv.innerHTML = `
@@ -50,7 +49,6 @@ export default () => {
       postsByAuthor.appendChild(userDiv);
     });
     function handlePostClick(e) {
-      console.log("event: ", e.target.id)
       const postsContainer = document.getElementById(`posts ${e.target.id.split(" ")[1]}`);
       // toggle display style
       if (window.getComputedStyle(postsContainer).display === "none") {
